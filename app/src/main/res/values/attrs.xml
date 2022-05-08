@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ISemsariButton">
+        <attr name="backcolor" format="color" />
+        <attr name="textcolor" format="color" />
+        <attr name="drright" format="reference" />
+        <attr name="drleft" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ISemsariCardView">
+        <attr name="backgroundimg" format="reference" />
+        <attr name="imgbtn" format="reference" />
+        <attr name="text_right" format="string" />
+        <attr name="text_left" format="string" />
+        <attr name="text_bottom_card" format="string" />
+    </declare-styleable>
+</resources>

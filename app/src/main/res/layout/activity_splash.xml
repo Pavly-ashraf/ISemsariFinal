@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_splash_background"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.SplashActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="83.1dp"
+        android:layout_marginLeft="17.3dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/img_isemsari_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="82dp"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="17.3dp"
+        android:src="@drawable/img_semsari"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="22dp"
+        android:fallbackLineSpacing="true"
+        android:gravity="center"
+        android:text="Find the house of your dreams effortlessly."
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+    </TextView>
+
+    <com.example.isemsari.components.ISemsariButton
+        android:id="@+id/materialButton3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="15dp"
+        app:backcolor="@color/mainColor"
+        app:drright="@drawable/signup_icon"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:text="sign up"
+        app:textcolor="@color/white">
+
+    </com.example.isemsari.components.ISemsariButton>
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/materialButton3"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="15dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/textView5"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent">-->
+
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/signUpButton"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="56dp"-->
+    <!--            android:layout_marginLeft="23dp"-->
+    <!--            android:layout_marginRight="22dp"-->
+    <!--            android:layout_marginBottom="15dp"-->
+    <!--            android:backgroundTint="@color/mainColor"-->
+    <!--            android:text="sign up "-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="12dp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            app:cornerRadius="30dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/materialButton3" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginEnd="8.2dp"-->
+    <!--            android:src="@drawable/signup_icon"-->
+    <!--            android:translationZ="10dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/materialButton3"-->
+    <!--            app:layout_constraintEnd_toEndOf="@+id/signUpButton"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/materialButton3">-->
+
+    <!--        </ImageView>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fallbackLineSpacing="true"
+        android:gravity="center"
+        android:text="Already have an account?"
+        android:textColor="@color/background"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></TextView>
+
+    <com.example.isemsari.components.ISemsariButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="52dp"
+        app:backcolor="@color/white"
+        app:drright="@drawable/blue_arrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:text="LOG IN"
+        app:textcolor="@color/brownish">
+
+    </com.example.isemsari.components.ISemsariButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

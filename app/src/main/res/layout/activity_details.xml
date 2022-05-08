@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listing"
+            type="com.example.isemsari.models.SpsonsoredListResponseModel" />
+    </data>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".activities.DetailsActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_details_card"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_splash_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ic_back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="19.8dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:text='@{String.valueOf(listing.title)}'
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/img_details_card"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/txt_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="30dp"
+                android:text="Type"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_details_card"
+
+                />
+
+            <TextView
+                android:id="@+id/txt_adtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="24dp"
+                android:text="Appartment for "
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_type"/>
+
+
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="47dp"
+                android:text='@{String.valueOf(listing.price)}'
+                android:textColor="@{listing.price > 1500000 ? @color/red : @color/Green }"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_type"></TextView>
+
+            <TextView
+                android:id="@+id/txt_floor_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="61dp"
+                android:text="Floor Plan"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_adtype"
+
+                ></TextView>
+
+            <ImageView
+                android:id="@+id/img_floor_plan"
+                android:layout_width="match_parent"
+                android:layout_height="238dp"
+                android:layout_marginLeft="33dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="33dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_splash_background"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_floor_plan"></ImageView>
+
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="61dp"
+                android:text="Location"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_floor_plan"></TextView>
+
+            <TextView
+                android:id="@+id/txt_location_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="49dp"
+                android:layout_marginTop="15dp"
+                android:text='@{String.valueOf(listing.address)}'
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_location"></TextView>
+
+            <TextView
+                android:id="@+id/txt_address_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="49dp"
+                android:text="Cairo, Nasr city "
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_location_address"></TextView>
+
+            <com.example.isemsari.components.ISemsariButton
+                android:id="@+id/btn_show_map"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="47dp"
+                android:clickable="true"
+                app:backcolor="@color/white"
+                app:drright="@drawable/ic_blue_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_location"
+                ></com.example.isemsari.components.ISemsariButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="39.5dp"
+                android:text="SHOW MAP"
+                android:textColor="@color/dark_grey"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:translationZ="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_show_map"
+                app:layout_constraintEnd_toEndOf="@+id/btn_show_map"
+                app:layout_constraintTop_toTopOf="@+id/btn_show_map"></TextView>
+
+            <TextView
+                android:id="@+id/txt_area"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="61dp"
+                android:text="Area"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address_details"></TextView>
+
+            <TextView
+                android:id="@+id/txt_area_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="62dp"
+                android:layout_marginRight="47dp"
+                android:text='@{String.valueOf(listing.Area)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address_details"></TextView>
+
+            <TextView
+                android:id="@+id/txt_interior"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="62dp"
+                android:text="Interior"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_area">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/img_bedroom"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_bedroom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_interior"></ImageView>
+
+            <TextView
+                android:id="@+id/txt_bedroom_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="23dp"
+                android:text='@{String.valueOf(listing.rooms)}'
+                app:layout_constraintStart_toEndOf="@+id/img_bedroom"
+                app:layout_constraintTop_toBottomOf="@+id/txt_interior"></TextView>
+
+            <TextView
+                android:id="@+id/txt_bedroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="21dp"
+                android:text="Rooms"
+                app:layout_constraintStart_toEndOf="@+id/txt_bedroom_number"
+                app:layout_constraintTop_toBottomOf="@+id/txt_interior"></TextView>
+
+            <ImageView
+                android:id="@+id/img_bathroom"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/ic_bathroom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_bedroom"></ImageView>
+
+            <TextView
+                android:id="@+id/txt_bathroom_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19.5dp"
+                android:layout_marginTop="20dp"
+                android:text='@{String.valueOf(listing.baths)}'
+                app:layout_constraintStart_toEndOf="@+id/img_bathroom"
+                app:layout_constraintTop_toBottomOf="@+id/img_bedroom"></TextView>
+
+            <TextView
+                android:id="@+id/txt_bathroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="19.8dp"
+                android:text="Baths"
+                app:layout_constraintStart_toEndOf="@+id/txt_bathroom_number"
+                app:layout_constraintTop_toBottomOf="@+id/img_bedroom"></TextView>
+
+            <TextView
+                android:id="@+id/txt_descreption_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="66.2dp"
+                android:text="Description"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_bathroom">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_descreption"
+                android:layout_width="282dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="12dp"
+
+                android:maxLines="3"
+                android:text='@{String.valueOf(listing.description)}'
+                android:textColor="@color/dark_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_descreption_title"></TextView>
+
+            <TextView
+                android:id="@+id/txt_facilities_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="61dp"
+                android:text="Facilities"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_descreption"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/facilities_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="18.3dp"
+                android:layout_marginRight="44dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_facilities_title"
+                tools:listitem="@layout/facility_list">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <com.example.isemsari.components.ISemsariButton
+                android:id="@+id/btn_call"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="41dp"
+                android:clickable="true"
+                android:elevation="15dp"
+                app:backcolor="@color/white"
+                app:drright="@drawable/ic_call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/facilities_recycler_view"></com.example.isemsari.components.ISemsariButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29.5dp"
+                android:layout_marginRight="45.5dp"
+                android:text="CALL"
+                android:textColor="@color/dark_grey"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:translationZ="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_call"
+                app:layout_constraintStart_toStartOf="@+id/btn_call"
+                app:layout_constraintTop_toTopOf="@+id/btn_call">
+
+            </TextView>
+
+            <com.example.isemsari.components.ISemsariButton
+                android:id="@+id/btn_message"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="41dp"
+                android:layout_marginTop="34.4dp"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                android:elevation="16dp"
+                app:backcolor="@color/white"
+                app:drright="@drawable/ic_blue_message"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/facilities_recycler_view"
+                app:textcolor="@color/dark_grey"
+
+
+                ></com.example.isemsari.components.ISemsariButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="45.5dp"
+                android:text="MESSAGE"
+                android:textColor="@color/dark_grey"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:translationZ="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_message"
+                app:layout_constraintEnd_toEndOf="@+id/btn_message"
+                app:layout_constraintTop_toTopOf="@+id/btn_message">
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</layout>
